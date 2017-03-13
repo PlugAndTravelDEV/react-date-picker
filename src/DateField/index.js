@@ -275,7 +275,6 @@ export default class DateField extends Component {
     const input = props.children.filter(FIND_INPUT)[0]
 
     if (input && input.type == 'input') {
-      props.rawInput = true
       props.forceValidDate = false
     }
 
@@ -778,7 +777,7 @@ export default class DateField extends Component {
   }
 
   onFieldChange(value) {
-    if (this.p.rawInput && typeof value != 'string') {
+    if (typeof value != 'string') {
       const event = value
       value = event.target.value
     }
